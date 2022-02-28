@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import DetailTable from './DetailTable';
 
 
 function DeleteModal(props) {
@@ -22,7 +23,10 @@ function DeleteModal(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <p>Are you sure that you wanna delete this todo?</p>
-                    {props.todo.title}
+                    <DetailTable
+                    title={props.todo.title}
+                    description={props.todo.description}
+                    />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
