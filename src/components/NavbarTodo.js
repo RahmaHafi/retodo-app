@@ -6,6 +6,7 @@ import {NavLink} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
+import logo from '../assets/todo-nav-logo.jpg'
 
 
 function NavbarTodo() {
@@ -14,7 +15,8 @@ function NavbarTodo() {
         <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
             <Container>
                 <Navbar.Brand href="#home">
-                    <img src="https://cdn.dribbble.com/users/4598/screenshots/314295/media/6def21d29374c85ab0dba502d80e5fb6.jpg" alt="logo" width={80} />
+                    {/* <img src="/images/todoLogo.jpg" alt="logo" width={80} /> */}
+                    <img src={logo} alt="logo" width={80} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
