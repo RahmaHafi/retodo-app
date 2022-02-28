@@ -1,8 +1,12 @@
+import NavbarTodo from "./components/NavbarTodo";
+
 
 
 function App() {
   return (
-    <div>hello</div>
+    <div>
+    <NavbarTodo/>
+    </div>
   );
 }
 
