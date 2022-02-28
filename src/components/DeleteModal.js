@@ -15,7 +15,7 @@ function DeleteModal(props) {
 
     return (
         <>
-            <i className="bi bi-trash3 btn text-danger" onClick={handleShow}></i>
+            <i className="bi bi-trash3 btn text-danger btn-lg" onClick={handleShow}></i>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
