@@ -1,14 +1,15 @@
 
-
 import React from 'react'
+import {NavLink} from 'react-router-dom'
+
+
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 
 
-
-
 function NavbarTodo() {
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
             <Container>
@@ -17,9 +18,9 @@ function NavbarTodo() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="#features">My Todos</Nav.Link>
-                        <Nav.Link href="#pricing">New Todo</Nav.Link>
+                    <Nav className="me-auto ">
+                        <NavLink className="mx-3 navLink"  to="/">My Todos</NavLink>
+                        <NavLink className="mx-3 navLink" to="/new-todo">New Todo</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
