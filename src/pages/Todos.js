@@ -11,13 +11,13 @@ function Todos(props) {
 
     return (
         <Container>
-            <ListGroup className="mt-5">
+            <ListGroup className="mt-5" >
                 {
                     props.todos.map((todo) => (
 
-                        <ListGroup.Item key={todo.id} variant="warning" className="d-flex justify-content-between">
+                        <ListGroup.Item key={todo.id} variant="warning" className="d-flex justify-content-between ">
                             <div>
-                                <i className="bi bi-file-check-fill btn text-warning"></i>
+                                <i className={`bi bi-file${todo.completed ?'-check':''}-fill btn text-warning `} onClick={()=>props.onToddgle(todo.id)}></i>
                                 <span>{todo.title}</span>
                             </div>
                             <div>

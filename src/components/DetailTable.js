@@ -8,11 +8,11 @@ function DetailTable({title,description}) {
             <Table  bordered hover>
                 <tbody>
                     <tr>
-                        <td>Title</td>
+                        <td className="w-25">Title</td>
                         <td>{title}</td>
                     </tr>
                     <tr>
-                        <td>Description</td>
+                        <td className="w-25">Description</td>
                         <td>{description}</td>
                     </tr>
                 </tbody>

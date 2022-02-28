@@ -34,14 +34,30 @@ function App() {
     setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== idToDelete))
 
   }
+  const handleToggle = (idToToggle) => {
+    setTodos(prevTodos => prevTodos.map((todo) => {
+      if (todo.id === idToToggle) {
+        return {
+          ...todo,
+          completed: !todo.completed
+        }
+      }else{
+        return todo
+      }
+    }))
+  }
 
   return (
     <Router>
       <NavbarTodo />
       <Switch>
-        <Route exact path="/" component={(props) => <Todos {...props} todos={todos} deleteTodo={handeleDelete} />} />
+        <Route exact path="/" component={(props) => <Todos
+          {...props}
+          todos={todos}
+          deleteTodo={handeleDelete}
+          onToddgle={handleToggle} />} />
         <Route path="/new-todo" component={(props) => <Todo {...props} addTodo={handleAddTodo} />} />
-        <Route path="/todos/:id" component={(props)=><TodoDetails {...props} todos={todos} />} />
+        <Route path="/todos/:id" component={(props) => <TodoDetails {...props} todos={todos} />} />
       </Switch>
     </Router>
   );
