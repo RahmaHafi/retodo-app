@@ -21,7 +21,7 @@ function Todos(props) {
                                 <span>{todo.title}</span>
                             </div>
                             <div>
-                                <i className="bi bi-eye-fill btn text-warning"></i>
+                                <i className="bi bi-eye-fill btn text-warning" onClick={()=>props.history.push(`/todos/${todo.id}`)}></i>
                                 <DeleteModal todo={todo} deleteThisTodo={handleDeleteThisTodo} />
                             </div>
                         </ListGroup.Item>

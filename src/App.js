@@ -41,7 +41,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={(props) => <Todos {...props} todos={todos} deleteTodo={handeleDelete} />} />
         <Route path="/new-todo" component={(props) => <Todo {...props} addTodo={handleAddTodo} />} />
-        <Route path="/todos/:id" component={TodoDetails} />
+        <Route path="/todos/:id" component={(props)=><TodoDetails {...props} todos={todos} />} />
       </Switch>
     </Router>
   );
