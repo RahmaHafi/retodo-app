@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 function Todos(props) {
-    console.log(`todosProps`, props);
+    
     return (
         <Container>
             <ListGroup className="mt-5">
