@@ -21,21 +21,26 @@ function App() {
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officia culpa ipsum qui minima atque dolor suscipit quis cum accusamus",
     completed: false
   }])
- const handleAddTodo =(obj)=>{
-    const newTodo={
-      id:Math.floor(Math.random()*10000).toString(),
+  const handleAddTodo = (obj) => {
+    const newTodo = {
+      id: Math.floor(Math.random() * 10000).toString(),
       completed: false,
       ...obj
     }
-   setTodos(prevTodos=>[...prevTodos,newTodo])
- }
+    setTodos(prevTodos => [...prevTodos, newTodo])
+  }
+  const handeleDelete = (idToDelete) => {
+
+    setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== idToDelete))
+
+  }
 
   return (
     <Router>
       <NavbarTodo />
       <Switch>
-        <Route exact path="/" component={(props)=> <Todos {...props} todos={todos}/> } />
-        <Route path="/new-todo" component={(props)=><Todo {...props} addTodo={handleAddTodo}  />} />
+        <Route exact path="/" component={(props) => <Todos {...props} todos={todos} deleteTodo={handeleDelete} />} />
+        <Route path="/new-todo" component={(props) => <Todo {...props} addTodo={handleAddTodo} />} />
         <Route path="/todos/:id" component={TodoDetails} />
       </Switch>
     </Router>
